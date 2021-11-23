@@ -30,12 +30,11 @@ int converteBinarioDecimal(int binario)
     Função que separa, e remove o numero em binario e o caracter extra, retornando a string pura
 */
 std::string preencheEDecifra(std::string linha){ 
-    int tamanho = linha.size();
     std::string numeroBinario="";
     int posicaoASerRemovida=0;
     std::string stringPura="";
 
-    for(int i=0; i<tamanho; i++){
+    for(int i=0; i<linha.size(); i++){
         if(linha.at(i) >= 48 && linha.at(i) <= 57){
             numeroBinario += linha.at(i);
             if(numeroBinario.size() == 5){
@@ -58,7 +57,18 @@ std::string preencheEDecifra(std::string linha){
     Função que reordena os blocos e inverte a reflexão
 */
 std::string reoordenarBlocos(std::string alterada){
+    std::string stringTemp;
+
+    for(int i = 0; i < alterada.size(); i++){
+        if(i % 2 == 0){
+            alterada.insert(i,"-");
+        }
+
+    }
+    std::cout << alterada << std::endl;
     
+    return alterada;
+
 }
 /* 
     Função que lê o arquivo e faz chamadas subsequentes para decriptografia
